@@ -114,3 +114,29 @@ $numeroPerfecto1 = esNumeroPerfecto($n1);
 $numeroPerfecto2 = esNumeroPerfecto($n2);
 echo "El número $n1 es perfecto?: " . ($numeroPerfecto1 ? "SI" : "NO") . "\n";
 echo "El número $n2 es perfecto?: " . ($numeroPerfecto2 ? "SI" : "NO") . "\n";
+
+// EJERCICIO 23 NUMERO AMSTRONG
+
+function esNumeroArmstrong (int $numero): bool {
+
+    $numeroOriginal = $numero;
+    $cadenaNumero = strval($numero);
+    $potencia = strlen($cadenaNumero);
+    $sumaPotencias = 0;
+    $arrayDigitos = str_split($cadenaNumero);
+
+    foreach ($arrayDigitos as $digito) {
+        $sumaPotencias += $digito ** $potencia;
+    }
+
+    return $sumaPotencias === $numeroOriginal;
+}
+
+echo "EJERCICIO 23:\n";
+
+$numero1 = 153;
+$resultado1 = esNumeroArmstrong($numero1);
+echo "1. El número $numero1 es Armstrong?: " . ($resultado1 ? "SI" : "NO") . "\n";
+$numero2 = 210;
+$resultado2 = esNumeroArmstrong($numero2);
+echo "2. El número $numero2 es Armstrong?: " . ($resultado2 ? "SI" : "NO") . "\n";
